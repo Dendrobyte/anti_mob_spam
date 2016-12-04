@@ -1,0 +1,9 @@
+name: AntiMobSpam
+authors: [Bot_Patrick, Mobkinz78]
+main: me.mobkinz78.antimobspam.Core
+version: 0.1
+description: Prevent spamming of mobs from any source.
+commands:
+permissions:
+  antimobspam.bypass:
+    description: Allows a PLAYER to bypass the mob spawning limit
