@@ -14,6 +14,10 @@ public class Core extends JavaPlugin {
 
     private static Plugin plugin;
 
+    private int timeOut;
+    private int spawnsPerReason;
+
+
     @Override
     public void onEnable(){
         String authors = "";
@@ -28,6 +32,10 @@ public class Core extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new PlayerInteract(), this);
 
         //Register Commands (if any)
+
+        // Load settings
+        this.timeOut = this.getConfig().getInt("time-out");
+        this.spawnsPerReason = this.getConfig().getInt("spawns-per-reason");
 
         /*
          * Moved this to the bottom...
@@ -46,14 +54,14 @@ public class Core extends JavaPlugin {
     }
 
     public static Plugin getPlugin(){
-        /*
-         * You don't want a null-pointer so you add
-         * this check. This is another reason for
-         * making Core.plugin private
-         */
-        if (Core.plugin == null)
-            return new Core();
         return Core.plugin;
     }
 
+    public int getTimeOut() {
+        return this.timeOut;
+    }
+
+    public int getSpawnsPerReason() {
+        return this.spawnsPerReason;
+    }
 }
