@@ -1,4 +1,4 @@
-package me.mobkinz78.antimobspam.event;
+package me.mobkinz78.antimobspam.listener;
 
 import org.bukkit.event.Listener;
 
@@ -8,7 +8,7 @@ import org.bukkit.event.Listener;
  * Website: Soon to be... hopefully...
  * §
  */
-public class PlayerInteract implements Listener {
+public class PlayerListener implements Listener {
 
 
 

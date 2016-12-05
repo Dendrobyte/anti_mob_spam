@@ -1,4 +1,4 @@
-package me.mobkinz78.antimobspam.event;
+package me.mobkinz78.antimobspam.listener;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -10,7 +10,7 @@ import org.bukkit.inventory.ItemStack;
 /**
  * Created by markbacon78 on 11/28/16.
  */
-public class DispenseEvent implements Listener {
+public class DispenseListener implements Listener {
 
     @EventHandler
     public void dispenseEvent(BlockDispenseEvent event){

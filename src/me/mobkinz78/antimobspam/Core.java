@@ -1,8 +1,9 @@
 package me.mobkinz78.antimobspam;
 
-import me.mobkinz78.antimobspam.event.DispenseEvent;
-import me.mobkinz78.antimobspam.event.PlayerInteract;
-import me.mobkinz78.antimobspam.event.SpawnEvent;
+import me.mobkinz78.antimobspam.listener.DispenseListener;
+import me.mobkinz78.antimobspam.listener.PlayerListener;
+import me.mobkinz78.antimobspam.listener.SpawnListener;
+import me.mobkinz78.antimobspam.listener.SpawnNumberExceedListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -27,9 +28,10 @@ public class Core extends JavaPlugin {
         System.out.printf("%s by %s has been initialized.", this.getDescription().getName(), authors);
 
         //Register Events
-        Bukkit.getServer().getPluginManager().registerEvents(new SpawnEvent(), this);
-        Bukkit.getServer().getPluginManager().registerEvents(new DispenseEvent(), this);
-        Bukkit.getServer().getPluginManager().registerEvents(new PlayerInteract(), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new SpawnListener(), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new DispenseListener(), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new PlayerListener(), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new SpawnNumberExceedListener(), this);
 
         //Register Commands (if any)
 
