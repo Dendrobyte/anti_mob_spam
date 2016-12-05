@@ -1,5 +1,6 @@
 package me.mobkinz78.antimobspam.listener;
 
+import me.mobkinz78.antimobspam.event.TimeOutEvent;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
@@ -10,7 +11,7 @@ import org.bukkit.event.Listener;
 public class TimeOutListener implements Listener {
 
 	@EventHandler
-	public void TimeOut() {
+	public void TimeOut(TimeOutEvent event) {
 
 	}
 }

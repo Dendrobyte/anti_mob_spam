@@ -9,7 +9,7 @@
     <list default="true" id="ad3da799-b915-4a26-87e2-a892a26d8076" name="Default" comment="Implemented that whole timeout thing">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/spigot_1_11.xml" afterPath="$PROJECT_DIR$/.idea/libraries/spigot_1_11.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/mobkinz78/antimobspam/util/SpawnTimerManager.java" afterPath="$PROJECT_DIR$/src/me/mobkinz78/antimobspam/util/SpawnTimerManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/mobkinz78/antimobspam/listener/TimeOutListener.java" afterPath="$PROJECT_DIR$/src/me/mobkinz78/antimobspam/listener/TimeOutListener.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,17 +52,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpawnTimerManager.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SpawnTimerManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/mobkinz78/antimobspam/util/SpawnTimerManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+            <state relative-caret-position="170">
+              <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="11" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#337#338#0" expanded="true" />
                 <element signature="e#378#379#0" expanded="true" />
                 <element signature="e#941#942#0" expanded="true" />
                 <element signature="e#971#972#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimeOutListener.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/me/mobkinz78/antimobspam/listener/TimeOutListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,11 +133,11 @@
         <option value="$PROJECT_DIR$/src/me/mobkinz78/antimobspam/listener/PlayerListener.java" />
         <option value="$PROJECT_DIR$/src/me/mobkinz78/antimobspam/event/TimeoutEvent.java" />
         <option value="$PROJECT_DIR$/src/me/mobkinz78/antimobspam/event/TimeOutEvent.java" />
-        <option value="$PROJECT_DIR$/src/me/mobkinz78/antimobspam/listener/TimeOutListener.java" />
         <option value="$PROJECT_DIR$/src/me/mobkinz78/antimobspam/Core.java" />
         <option value="$PROJECT_DIR$/src/me/mobkinz78/antimobspam/util/SpawnNumberTimer.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/me/mobkinz78/antimobspam/util/SpawnTimerManager.java" />
+        <option value="$PROJECT_DIR$/src/me/mobkinz78/antimobspam/listener/TimeOutListener.java" />
       </list>
     </option>
   </component>
@@ -216,28 +228,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="antimobspam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Anti Mob Spam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Anti Mob Spam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="antimobspam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -754,7 +744,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1480378421206</updated>
-      <workItem from="1480899333329" duration="13630000" />
+      <workItem from="1480899333329" duration="14142000" />
     </task>
     <task id="LOCAL-00001" summary="Basic file setup complete.">
       <created>1480882570970</created>
@@ -826,11 +816,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480912316253</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Implemented that whole timeout thing">
+      <created>1480913166628</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1480913166628</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13630000" />
+    <option name="totallyTimeSpent" value="14142000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -910,11 +907,11 @@
     <MESSAGE value="Pure refactor. WAY cleaner" />
     <MESSAGE value="Added a simple configuration file &amp;&amp; loaded those settings into the plugin" />
     <MESSAGE value="Oh gosh this one is big... sorry.&#10;Refactored events to listeners (because they are) &#10;Added a new event&#10;Worked on the timer&#10;probably something else???" />
-    <MESSAGE value="Implemented that whole timeout thing" />
     <MESSAGE value="Actually added the creature to the list..." />
     <MESSAGE value="Modified readme" />
     <MESSAGE value="Started work on the timer manager" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started work on the timer manager" />
+    <MESSAGE value="Implemented that whole timeout thing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented that whole timeout thing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1289,16 +1286,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/mobkinz78/antimobspam/listener/TimeOutListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1364,14 +1351,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/mobkinz78/antimobspam/util/SpawnTimerManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+        <state relative-caret-position="170">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#337#338#0" expanded="true" />
             <element signature="e#378#379#0" expanded="true" />
             <element signature="e#941#942#0" expanded="true" />
             <element signature="e#971#972#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/mobkinz78/antimobspam/listener/TimeOutListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
