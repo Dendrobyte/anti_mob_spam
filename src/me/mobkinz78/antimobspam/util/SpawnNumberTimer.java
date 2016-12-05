@@ -39,7 +39,7 @@ public class SpawnNumberTimer {
 		return this.spawnReason;
 	}
 
-	public void addCreature() {
+	public void addCreature(CreatureSpawnEvent event) {
 		// the "1000" is converting from ms to s
 		if ((System.currentTimeMillis() - this.lastSpawn) / 1000 > Core.getInstance().getTimeOut()) {
 			Bukkit.getServer().getPluginManager().callEvent(new TimeOutEvent(this));
@@ -51,6 +51,8 @@ public class SpawnNumberTimer {
 		// adds one to the creatures count and then checks to see if it is greater than the max allowed
 		if (++this.creatures > Core.getInstance().getSpawnsPerReason())
 			Bukkit.getServer().getPluginManager().callEvent(new SpawnNumberExceedEvent(this));
+
+		this.creatureSpawns.add(event);
 	}
 
 }
