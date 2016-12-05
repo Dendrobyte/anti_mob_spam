@@ -1,6 +1,6 @@
 package me.mobkinz78.antimobspam.event;
 
-import me.mobkinz78.antimobspam.util.SpawnNumberTimer;
+import me.mobkinz78.antimobspam.util.SpawnTimer.base.SpawnNumberTimer;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 

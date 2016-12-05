@@ -26,7 +26,7 @@ public class Core extends JavaPlugin {
         //Register Events
         Bukkit.getServer().getPluginManager().registerEvents(new SpawnListener(), this);
         Bukkit.getServer().getPluginManager().registerEvents(new DispenseListener(), this);
-        Bukkit.getServer().getPluginManager().registerEvents(new PlayerListener(), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
         // custom events
         Bukkit.getServer().getPluginManager().registerEvents(new SpawnNumberExceedListener(), this);
         Bukkit.getServer().getPluginManager().registerEvents(new TimeOutListener(), this);

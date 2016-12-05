@@ -1,4 +1,4 @@
-package me.mobkinz78.antimobspam.util;
+package me.mobkinz78.antimobspam.util.SpawnTimer.base;
 
 import me.mobkinz78.antimobspam.Core;
 import me.mobkinz78.antimobspam.event.SpawnNumberExceedEvent;
@@ -15,20 +15,18 @@ import java.util.List;
  * <p>
  * Handles the reason and number of creatures caused by a spawn reason.
  */
-public class SpawnNumberTimer {
+public abstract class SpawnNumberTimer<T> {
 
 	private final List<CreatureSpawnEvent> creatureSpawns;
 	private final CreatureSpawnEvent.SpawnReason spawnReason;
 	private long lastSpawn;
 	private int creatures;
 
-	public SpawnNumberTimer(CreatureSpawnEvent event) {
+	public SpawnNumberTimer(CreatureSpawnEvent.SpawnReason spawnReason) {
 		this.creatureSpawns = new ArrayList<>();
-		this.spawnReason = event.getSpawnReason();
+		this.spawnReason = spawnReason;
 		this.lastSpawn = System.currentTimeMillis();
 		this.creatures = 0;
-
-		this.creatureSpawns.add(event);
 	}
 
 	public List<CreatureSpawnEvent> getCreatureSpawns() {
@@ -39,7 +37,7 @@ public class SpawnNumberTimer {
 		return this.spawnReason;
 	}
 
-	public void addCreature(CreatureSpawnEvent event) {
+	public void add(CreatureSpawnEvent event) {
 		// the "1000" is converting from ms to s
 		if ((System.currentTimeMillis() - this.lastSpawn) / 1000 > Core.getInstance().getTimeOut()) {
 			Bukkit.getServer().getPluginManager().callEvent(new TimeOutEvent(this));
