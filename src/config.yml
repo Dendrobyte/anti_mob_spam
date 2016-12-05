@@ -1,0 +1,25 @@
+##---------------------------##
+##  AntiMobSpam Config File  ##
+##---------------------------##
+
+# Remember to use SPACES and not TABS
+
+
+# - Settings -
+#
+# Feel free to modify them :)
+
+# time-out
+# - int (a number)
+# - in seconds
+# - default: 60
+#
+# The time until a certain spawn cause will be ignored
+time-out: 60
+
+# spawns-per-reason
+# - int (a number)
+# - default: 5
+#
+# The number of times a spawn will be allowed due to a certain reason
+spawns-per-reason: 5

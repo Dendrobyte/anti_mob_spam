@@ -1,7 +1,7 @@
 package me.mobkinz78.antimobspam;
 
+import me.mobkinz78.antimobspam.listener.*;
 import org.bukkit.Bukkit;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -9,28 +9,59 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class Core extends JavaPlugin {
 
-    public static Plugin plugin;
+    private static Core instance;
+
+    private int timeOut;
+    private int spawnsPerReason;
+
 
     @Override
     public void onEnable(){
-        System.out.println("AntiMobSpam by Bot_Patrick and Mobkinz78 has been initialized.");
-        plugin = this;
+        String authors = "";
+        for (String s: this.getDescription().getAuthors()) {
+            authors += s + " ";
+        }
+        System.out.printf("%s by %s has been initialized.", this.getDescription().getName(), authors);
 
         //Register Events
-        Bukkit.getServer().getPluginManager().registerEvents(new SpawnEvent(), this);
-        Bukkit.getServer().getPluginManager().registerEvents(new DispenseEvent(), this);
-        Bukkit.getServer().getPluginManager().registerEvents(new PlayerInteract(), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new SpawnListener(), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new DispenseListener(), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
+        // custom events
+        Bukkit.getServer().getPluginManager().registerEvents(new SpawnNumberExceedListener(), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new TimeOutListener(), this);
 
         //Register Commands (if any)
+
+        // Load settings
+        this.timeOut = this.getConfig().getInt("time-out");
+        this.spawnsPerReason = this.getConfig().getInt("spawns-per-reason");
+
+        /*
+         * Moved this to the bottom...
+         * really it's just to make me happy but
+         * there could potentially be some issues
+         * where it is accessed before everything
+         * is fully instantiated. Only relevant
+         * for multithreaded programs though
+         */
+        Core.instance = this;
     }
 
     @Override
     public void onDisable(){
-        System.out.println("AntiMobSpam has been unitialized");
+        System.out.printf("%s has been uninitialized", this.getDescription().getName());
     }
 
-    public static Plugin getPlugin(){
-        return plugin;
+    public static Core getInstance(){
+        return Core.instance;
     }
 
+    public int getTimeOut() {
+        return this.timeOut;
+    }
+
+    public int getSpawnsPerReason() {
+        return this.spawnsPerReason;
+    }
 }

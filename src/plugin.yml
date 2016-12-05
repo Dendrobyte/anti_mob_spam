@@ -1,5 +1,5 @@
 name: AntiMobSpam
-authors: [Bot_Patrick, Mobkinz78]
+authors: [Bot_Patrick, Mobkinz78, catcake]
 main: me.mobkinz78.antimobspam.Core
 version: 0.1
 description: Prevent spamming of mobs from any source.
