@@ -1,13 +1,9 @@
-package me.mobkinz78.antimobspam;
+package me.mobkinz78.antimobspam.event;
 
-import org.bukkit.Material;
-import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockDispenseEvent;
 import org.bukkit.event.entity.CreatureSpawnEvent;
-import org.bukkit.inventory.ItemStack;
 
 /**
  * Created by markbacon78 on 11/28/16.

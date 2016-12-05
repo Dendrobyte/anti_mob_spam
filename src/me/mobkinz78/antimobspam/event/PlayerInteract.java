@@ -1,4 +1,4 @@
-package me.mobkinz78.antimobspam;
+package me.mobkinz78.antimobspam.event;
 
 import org.bukkit.event.Listener;
 

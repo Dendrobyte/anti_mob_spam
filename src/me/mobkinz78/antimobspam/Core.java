@@ -1,5 +1,8 @@
 package me.mobkinz78.antimobspam;
 
+import me.mobkinz78.antimobspam.event.DispenseEvent;
+import me.mobkinz78.antimobspam.event.PlayerInteract;
+import me.mobkinz78.antimobspam.event.SpawnEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -9,12 +12,16 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class Core extends JavaPlugin {
 
-    public static Plugin plugin;
+    private static Plugin plugin;
 
     @Override
     public void onEnable(){
-        System.out.println("AntiMobSpam by Bot_Patrick and Mobkinz78 has been initialized.");
-        plugin = this;
+        String authors = "";
+        for (String s: this.getDescription().getAuthors()) {
+            authors += s + " ";
+        }
+        System.out.printf("%s by %s has been initialized.", this.getDescription().getName(), authors);
+        Core.plugin = this;
 
         //Register Events
         Bukkit.getServer().getPluginManager().registerEvents(new SpawnEvent(), this);
@@ -26,11 +33,11 @@ public class Core extends JavaPlugin {
 
     @Override
     public void onDisable(){
-        System.out.println("AntiMobSpam has been unitialized");
+        System.out.println("AntiMobSpam has been uninitialized");
     }
 
     public static Plugin getPlugin(){
-        return plugin;
+        return Core.plugin;
     }
 
 }

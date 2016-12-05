@@ -1,4 +1,4 @@
-package me.mobkinz78.antimobspam;
+package me.mobkinz78.antimobspam.util;
 
 /**
  * Created by markbacon78 on 11/28/16.
