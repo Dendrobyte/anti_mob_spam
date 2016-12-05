@@ -1,11 +1,7 @@
 package me.mobkinz78.antimobspam;
 
-import me.mobkinz78.antimobspam.listener.DispenseListener;
-import me.mobkinz78.antimobspam.listener.PlayerListener;
-import me.mobkinz78.antimobspam.listener.SpawnListener;
-import me.mobkinz78.antimobspam.listener.SpawnNumberExceedListener;
+import me.mobkinz78.antimobspam.listener.*;
 import org.bukkit.Bukkit;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -13,7 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class Core extends JavaPlugin {
 
-    private static Plugin plugin;
+    private static Core instance;
 
     private int timeOut;
     private int spawnsPerReason;
@@ -31,7 +27,9 @@ public class Core extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new SpawnListener(), this);
         Bukkit.getServer().getPluginManager().registerEvents(new DispenseListener(), this);
         Bukkit.getServer().getPluginManager().registerEvents(new PlayerListener(), this);
+        // custom events
         Bukkit.getServer().getPluginManager().registerEvents(new SpawnNumberExceedListener(), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new TimeOutListener(), this);
 
         //Register Commands (if any)
 
@@ -47,7 +45,7 @@ public class Core extends JavaPlugin {
          * is fully instantiated. Only relevant
          * for multithreaded programs though
          */
-        Core.plugin = this;
+        Core.instance = this;
     }
 
     @Override
@@ -55,8 +53,8 @@ public class Core extends JavaPlugin {
         System.out.printf("%s has been uninitialized", this.getDescription().getName());
     }
 
-    public static Plugin getPlugin(){
-        return Core.plugin;
+    public static Core getInstance(){
+        return Core.instance;
     }
 
     public int getTimeOut() {
